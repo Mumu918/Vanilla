@@ -1,21 +1,39 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import Pie from './components/Pie.vue'
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div class="container">
+    <div class="left">
+      <Pie />
+    </div>
+    <div class="right">
+      <lay-button
+        type="primary"
+        size="lg"
+        @click="$store.commit('toggleDarkMode')"
+        >toggle darkMode</lay-button
+      >
+    </div>
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="less">
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+
+  .left {
+    width: 50%;
+    margin-right: 10px;
+  }
+
+  .right {
+    width: 50%;
+    margin-left: 10px;
+  }
 }
 </style>
